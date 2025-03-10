@@ -1,0 +1,8 @@
+position: "fixed",
+      maxHeight: isActive ? "50%": "8%" ,
+      width: "100%",
+      zIndex: "20",
+      padding: "20px",
+      background: "rgba(255 ,244 , 254, 0.08 )",
+      transition: "max-height 0.5s ease-in-out, opacity 0.5s ease-in-out",
+      backdropFilter: "blur(10px)"
