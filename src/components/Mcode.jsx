@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Header";
 import Footer from "./Footer";
+import EventList from "./EventList";
 
 
 
@@ -56,6 +57,10 @@ const Mcode = () => {
         >
           CODEFEST2K25
         </h1>
+      </section>
+      <section>
+        {/* EventCard with EventList */}
+        <EventList/>
       </section>
       <section>
 
