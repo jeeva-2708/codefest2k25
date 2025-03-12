@@ -47,7 +47,7 @@ const Header = () => {
             margin: "0",
           }}
         >
-          CODEFEST2K25
+          CODEFEST 2K25
         </h3>
         <a id="nav-toggle" className={isActive ? "active" : ""}
   onClick={handleClick} href="#">
@@ -56,7 +56,7 @@ const Header = () => {
       </div>
           
       <div
-        className="nav d-lg-flex flex-column flex-lg-row gap-5 my-5 my-lg-0"
+        className="nav d-lg-flex flex-column flex-lg-row gap-3 gap-lg-5 my-5 my-lg-0"
         style={{
           display: "none",
           color: "white",

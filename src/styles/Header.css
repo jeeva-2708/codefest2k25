@@ -85,7 +85,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
+    right: auto;
     margin: auto;
     background-color: #C42ECC;
     width: 0%;
@@ -98,10 +98,9 @@
   }
   .register > a{
     transition: background-color 0.5s;
-  }
-  .register > a:hover{
     background-color: rgba(255, 255, 255,0.8);
   }
+
 
 
 

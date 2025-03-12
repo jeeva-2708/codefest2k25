@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Header";
 import Footer from "./Footer";
+import Time from "./Time";
 
 
 
@@ -54,13 +55,14 @@ const Mcode = () => {
             fontSize: "50px",
           }}
         >
-          CODEFEST2K25
+          CODEFEST 2K25
         </h1>
       </section>
-      <section>
-
+      
+      <Time />
+  
         <Footer/>
-      </section>
+      
     </div>
   );
 };
