@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Header";
 import Footer from "./Footer";
+<<<<<<< HEAD
 import Time from "./Time";
+=======
+import EventList from "./EventList";
+>>>>>>> jeeva-p
 
 
 
@@ -58,9 +62,18 @@ const Mcode = () => {
           CODEFEST 2K25
         </h1>
       </section>
+<<<<<<< HEAD
       
       <Time />
   
+=======
+      <section>
+        {/* EventCard with EventList */}
+        <EventList/>
+      </section>
+      <section>
+
+>>>>>>> jeeva-p
         <Footer/>
       
     </div>
