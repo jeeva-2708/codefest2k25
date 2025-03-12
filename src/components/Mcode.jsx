@@ -2,11 +2,8 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Header";
 import Footer from "./Footer";
-<<<<<<< HEAD
 import Time from "./Time";
-=======
-import EventList from "./EventList";
->>>>>>> jeeva-p
+import EventList from "./EventList"
 
 
 
@@ -14,7 +11,7 @@ import EventList from "./EventList";
 
 
 
-const Mcode = () => {
+function Mcode() {
   const [text, setText] = useState("Registration Open");
 
   const reg = () => {
@@ -34,13 +31,13 @@ const Mcode = () => {
       animatedElement.style.animationPlayState = "running";
     }
   });
-  
 
 
- 
+
+
   return (
-    <div >
-      <Header/>
+    <div>
+      <Header />
       {/* main sec */}
       <section
         className="main container"
@@ -62,22 +59,16 @@ const Mcode = () => {
           CODEFEST 2K25
         </h1>
       </section>
-<<<<<<< HEAD
-      
-      <Time />
-  
-=======
-      <section>
-        {/* EventCard with EventList */}
-        <EventList/>
-      </section>
-      <section>
 
->>>>>>> jeeva-p
-        <Footer/>
-      
+      <Time />
+      <section>
+        <EventList/>
+
+      </section>
+      <Footer />
+
     </div>
   );
-};
+}
 
 export default Mcode;
