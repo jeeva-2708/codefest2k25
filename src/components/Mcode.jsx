@@ -9,9 +9,7 @@ import EventList from "./EventList"
 
 
 
-
-
-function Mcode() {
+const Mcode = () => {
   const [text, setText] = useState("Registration Open");
 
   const reg = () => {
@@ -31,13 +29,13 @@ function Mcode() {
       animatedElement.style.animationPlayState = "running";
     }
   });
+  
 
 
-
-
+ 
   return (
-    <div>
-      <Header />
+    <div >
+      <Header/>
       {/* main sec */}
       <section
         className="main container"
@@ -59,16 +57,17 @@ function Mcode() {
           CODEFEST 2K25
         </h1>
       </section>
+          <Time/>
 
-      <Time />
       <section>
+        {/* EventCard with EventList */}
         <EventList/>
-
       </section>
-      <Footer />
 
+        <Footer/>
+      
     </div>
   );
-}
+};
 
 export default Mcode;
