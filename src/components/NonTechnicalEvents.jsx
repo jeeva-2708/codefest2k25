@@ -1,6 +1,7 @@
 import React from "react";
 import EventCard from "./EventCard";
 import eventinfo from "../assets/eventinfo";
+import "../styles/NonTechnicalEvents.css";
 
 function NonTechnicalEvents() {
   const nonTechnicalEvents = eventinfo.filter(event => event.type === "Non-Technical");

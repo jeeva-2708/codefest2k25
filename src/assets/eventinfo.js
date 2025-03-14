@@ -1,28 +1,13 @@
-/*import {
-  backyard,
-  code,
-  connection,
-  echo,
-  flip,
-  game,
-  loop,
-  paper,
-  poster,
-  quizzie,
-  reel,
-  tech,
-  ui,
-} from "."; */
-import Freefire from '../assets/event_img/Game.jpg';
-
+import {
+  Freefire,
+  Football,
+} from ".";
 
 const eventinfo = [
   {
-    title: "Quizzie-Buzzie",
+    title: "InnovQuiz",
     type: "Technical",
-    // icon: quizzie,
-    iconBg: "#383E56",
-    date: "30th APR '24 - 10am",
+    date: "4th APR '25 - 10am",
     realname:"Quizzie",
     points: [
       "Engage in a battle of wits and tech knowledge as you tackle mind-bending questions in our lightning-fast quiz.",
@@ -188,6 +173,21 @@ const eventinfo = [
       "No laptops or systems can be used; only mobile phones are allowed.",
       "Room codes will be given on the spot.",
       "Decisions will be made fairly; no arguments are allowed against organizers.",
+    ],
+  },
+
+  {
+    title: "Foot Ball",
+    type: "Non-Technical",
+    // icon: Football,
+    background: Football,
+    iconBg: "#383E56",
+    date: "30th APR '24 - 10am",
+    realname: "Free Fire",
+    points: [
+      "Experience the thrill of box cricket in a backyard setting with teams of five players each.",
+      "Each team must consist of exactly five members, including fielders and batters.",
+      "The game will follow standard box cricket rules, with each team getting a set number of overs to bat and bowl.",
     ],
   },
 ];

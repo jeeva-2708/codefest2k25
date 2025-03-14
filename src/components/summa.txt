@@ -7,21 +7,3 @@ position: "fixed",
       transition: "max-height 0.5s ease-in-out, opacity 0.5s ease-in-out",
       backdropFilter: "blur(10px)"
 
-      /* Responsive Design */
-@media (min-width: 992px) {
-  .event-container {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 1023px) and (min-width: 768px) {
-  .event-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 767px) {
-  .event-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
