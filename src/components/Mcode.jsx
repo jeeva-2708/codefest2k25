@@ -3,7 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Header";
 import Footer from "./Footer";
 import Time from "./Time";
-import EventList from "./EventList"
+import NonTechnicalEvents from "./NonTechnicalEvents";
+import TechnicalEvents from "./TechnicalEvents";
 
 
 
@@ -61,7 +62,8 @@ const Mcode = () => {
 
       <section>
         {/* EventCard with EventList */}
-        <EventList/>
+        <NonTechnicalEvents/>
+        <TechnicalEvents/>
       </section>
 
         <Footer/>
