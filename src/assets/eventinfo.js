@@ -13,6 +13,8 @@
   tech,
   ui,
 } from "."; */
+import Freefire from '../assets/event_img/Game.jpg';
+
 
 const eventinfo = [
   {
@@ -21,6 +23,7 @@ const eventinfo = [
     // icon: quizzie,
     iconBg: "#383E56",
     date: "30th APR '24 - 10am",
+    realname:"Quizzie",
     points: [
       "Engage in a battle of wits and tech knowledge as you tackle mind-bending questions in our lightning-fast quiz.",
       "Participants must answer multiple-choice questions within a set time limit.",
@@ -33,6 +36,7 @@ const eventinfo = [
     // icon: tech,
     iconBg: "#E6DEDD",
     date: "30th APR '24 - 10am",
+    realname: "Free Fire",
     points: [
       "Step onto the innovation stage and present your tech marvels, be it groundbreaking ideas, cutting-edge research, or visionary startup pitches.",
       "Presentations must adhere to a strict time limit allocated for each participant or team.",
@@ -45,6 +49,7 @@ const eventinfo = [
     // icon: code,
     iconBg: "#383E56",
     date: "30th APR '24 - 10am",
+    realname: "Free Fire",
     points: [
       "Embark on a coding expedition where you'll crack algorithms, debug solutions, and code your way through complex challenges.",
       "Teams (max 2 members) will be given a coding problem and a specified timeframe to solve it.",
@@ -57,6 +62,7 @@ const eventinfo = [
     // icon: flip,
     iconBg: "#E6DEDD",
     date: "30th APR '24 - 10am",
+    realname: "Free Fire",
     points: [
       "Decode the mysteries of code in Flip-flop, where participants unravel intricate algorithms and logic.",
       "Participants must analyze and present their understanding of the given code.",
@@ -69,6 +75,7 @@ const eventinfo = [
     // icon: ui,
     iconBg: "#383E56",
     date: "30th APR '24 - 10am",
+    realname: "Free Fire",
     points: [
       "Immerse yourself in a design frenzy as you sprint to create captivating user interfaces for web and mobile platforms.",
       "Participants must create wireframes or prototypes for web or app designs within the given time frame.",
@@ -81,6 +88,7 @@ const eventinfo = [
     // icon: paper,
     iconBg: "#E6DEDD",
     date: "30th APR '24 - 10am",
+    realname: "Free Fire",
     points: [
       "Dance to the rhythm of shrinking spaces in this dynamic competition.",
       "Participants must remain within the designated dance area and adapt to shrinking space as rounds progress.",
@@ -93,6 +101,7 @@ const eventinfo = [
     // icon: reel,
     iconBg: "#383E56",
     date: "30th APR '24 - 10am",
+    realname: "Free Fire",
     points: [
       "Ignite your editing genius in Reel-O-mania, where raw video clips transform into cinematic masterpieces.",
       "Edited video reels must be submitted within the specified time limit.",
@@ -105,6 +114,7 @@ const eventinfo = [
     // icon: poster,
     iconBg: "#E6DEDD",
     date: "30th APR '24 - 10am",
+    realname: "Free Fire",
     points: [
       "Unleash your artistic flair in a whirlwind poster design challenge.",
       "Handmade posters must be created on-site based on the theme announced.",
@@ -117,6 +127,7 @@ const eventinfo = [
     // icon: loop,
     iconBg: "#383E56",
     date: "30th APR '24 - 10am",
+    realname: "Free Fire",
     points: [
       "Collaborate, strategize, and execute flawlessly in Loop Action, where teams navigate a series of synchronized tasks.",
       "Teams will receive a sequence of tasks that must be completed in the given order.",
@@ -129,6 +140,7 @@ const eventinfo = [
     // icon: echo,
     iconBg: "#E6DEDD",
     date: "30th APR '24 - 10am",
+    realname: "Free Fire",
     points: [
       "The song should be continued when the lyrics fade off.",
       "Each participant can participate individually or in teams of two.",
@@ -142,6 +154,7 @@ const eventinfo = [
     // icon: backyard,
     iconBg: "#383E56",
     date: "30th APR '24 - 10am",
+    realname: "Free Fire",
     points: [
       "Experience the thrill of box cricket in a backyard setting with teams of five players each.",
       "Each team must consist of exactly five members, including fielders and batters.",
@@ -154,6 +167,7 @@ const eventinfo = [
     // icon: connection,
     iconBg: "#E6DEDD",
     date: "30th APR '24 - 10am",
+    realname: "Free Fire",
     points: [
       "Unleash your detective skills in Go Connection, where participants decipher answers by piecing together clues.",
       "Clues will be provided sequentially, and participants must use all given clues to arrive at the correct answer.",
@@ -163,9 +177,11 @@ const eventinfo = [
   {
     title: "Free Fire",
     type: "Non-Technical",
-    // icon: game,
+    //icon: Fire,
+    background: Freefire,
     iconBg: "#383E56",
     date: "30th APR '24 - 10am",
+    realname: "Free Fire",
     points: [
       "Join us for an adrenaline-pumping Free Fire tournament where players showcase their skills in intense battles!",
       "Free Fire - Solo Mode Only.",
