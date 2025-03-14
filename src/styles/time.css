@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -6,63 +6,101 @@
 
 
 /* time starts */
-.time{
+.time {
     height: 80vh;
-    
+
 }
-.time > div > h1{
-    font-family: "Oswald", sans-serif;
+
+.time>div>h1 {
+    font-family: 'Impact', Charcoal, sans-serif;
     font-size: 55px;
     margin-bottom: 50px;
-    color: #C2C2C2;
+    color: #000000;
 }
-.time > div{
+
+.time>div {
     width: 100vw;
     padding: 45px;
-    background-image: radial-gradient(rgba(143, 26, 167, 0.5) 37%, rgba(0,0,0,20%) 100% ) ;
+    background: #ff00cc;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #333399, #ff00cc);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #333399, #ff00cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    box-shadow: 0px 0px 20px #a493a4;
     border-radius: 20px;
 }
 
-.time > div > div > div > div{
-    
+.time>div>div>div>div {
+
     display: inline-block;
     padding: 13px 25px;
-    background-color: #FAFA4A;
+    background-color: #FFF ;
     border-radius: 16px;
     margin-bottom: 10px;
 }
-.time > div > div:nth-child(2) {
+
+.time>div>div:nth-child(2) {
     margin-bottom: 20px;
 }
-.time > div > div > div > div > p{
+
+.time>div>div>div>div>p {
     font-family: "Seven Segment";
     font-weight: 700;
     font-size: 35px;
+    text-shadow: rgba(255, 255, 255, 0.8);
     margin-bottom: 0 !important;
 }
 
-.time > div > div > div > p{
+.time>div>div>div>p {
     font-family: "Roboto Condensed", sans-serif;
     font-size: 18px;
     color: #FFFFFF;
 }
-.time > div > div:nth-child(3) > a{
-    padding: 20px 30px;
-    font-family: "Eras Bold ITC fonts link", sans-serif;
-    font-weight: 700;
-    color: #FFFFFF;
-    background-color: #2103CA;
-    box-shadow: 0px 0px 69px 0px #2103CA;;
+
+.time>div>div:nth-child(3)>a {
+    background-image: linear-gradient(to right, #005C97 0%, #363795  51%, #005C97  100%);
     text-decoration: none;
-    border-radius: 16px;
+    font-weight: 700;
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #2e2929;
+    border-radius: 10px;
+    display: inline-block;
 }
-.time > div > div:nth-child(3) > a:hover{
-    color: #2103CA;
-    background-color: #FFFFFF;
+
+.time>div>div:nth-child(3)>a:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+
 }
 
 @media screen and (min-width: 998px) {
-    .time > div{
-        width: 50vw;
+    .time>div {
+        width: 100vw;
     }
-  }
+}
+
+.btn-grad {background-image: linear-gradient(to right, #005C97 0%, #363795  51%, #005C97  100%)}
+.btn-grad {
+   margin: 10px;
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+ }
+
+ .btn-grad:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }

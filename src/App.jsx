@@ -12,9 +12,6 @@ function App() {
     <>
       <Background/>
       <Mcode/>
-      <div style={{
-        height: "2000px"
-      }}></div>
       {/* <BrowserRouter>
         <Routes>
           <Route path='/' element={<home/>} />

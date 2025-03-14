@@ -26,13 +26,12 @@ const Header = () => {
     <div className={`wrapper ${isActive ? "":"active"}`}
     style={{
       position: "fixed",
-      maxHeight: isActive ? "50%": "8%" ,
+  
       width: "100%",
-      zIndex: "20",
+      zIndex: "1",
       padding: "20px",
       background: "rgba(255 ,244 , 254, 0.08 )",
-      transition: "opacity 0.5s, max-height 0.5s",
-      backdropFilter: "blur(10px)"
+            backdropFilter: "blur(10px)"
     }}
   >
     <div
@@ -43,7 +42,7 @@ const Header = () => {
           style={{
             fontFamily: "Cyber Alert",
             color: "#C42ECC",
-            fontSize: "30px",
+            fontSize: "20px",
             margin: "0",
           }}
         >

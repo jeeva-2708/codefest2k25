@@ -51,7 +51,7 @@ const Mcode = () => {
           style={{
             fontFamily: "Cyber Alert",
             color: "#fbccfd",
-            fontSize: "50px",
+            fontSize: "45px",
           }}
         >
           CODEFEST 2K25
