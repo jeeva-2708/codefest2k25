@@ -3,6 +3,7 @@ import {
   Football,
   Basketball,
   Cricket,
+  Armrestling,
 } from ".";
 
 const eventinfo = [
@@ -179,9 +180,9 @@ const eventinfo = [
   {
     title: "Power Play",
     type: "Non-Technical",
-    background: Freefire,
+    background: Armrestling,
     date: "30th APR '24 - 10am",
-    realname: "Free Fire",
+    realname: "Power Play",
     points: [
       "Unleash your detective skills in Go Connection, where participants decipher answers by piecing together clues.",
       "Clues will be provided sequentially, and participants must use all given clues to arrive at the correct answer.",
