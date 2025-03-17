@@ -12,7 +12,6 @@ function EventCard({ event }) {
 
       {/* Content */}
       <div className="event-content">
-        <img src={event.icon} alt={event.title} className="event-icon" />
         <h3 className="event-title">{event.title}</h3>
         <p className="event-description">{event.points[0]}</p>
         <p className="event-realname">{event.realname}</p>
