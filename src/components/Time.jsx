@@ -1,6 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import "../styles/time.css";
 
 const Time = () => {
@@ -10,7 +12,9 @@ const Time = () => {
     minutes: 0,
     seconds: 0,
   });
-
+  useEffect(() => {
+    AOS.init();
+  }, [])
   useEffect(() => {
     const targetDate = new Date("2025-03-27T23:59:59");
 

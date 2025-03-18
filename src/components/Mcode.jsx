@@ -66,7 +66,7 @@ const Mcode = () => {
         <TechnicalEvents/>
       </section>
 
-        <Footer/>
+        <Footer></Footer>
       
     </div>
   );
