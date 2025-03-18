@@ -7,7 +7,7 @@ function EventCard({ event }) {
       {/* Background Layer */}
       <div 
         className="event-bg" 
-        style={{ backgroundImage: `url(${event.background})` }}
+        style={{ backgroundImage: `url(${event.background})`}}
       ></div>
 
       {/* Content */}
