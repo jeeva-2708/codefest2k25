@@ -2,6 +2,7 @@
   position: relative;
   width: 299px;
   height: 420px;
+  border: 1px solid white;
   border-radius: 5px;
   overflow: hidden;
   color: white;
@@ -11,6 +12,10 @@
   text-align: center;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
 }
 
 /* Background Layer */
@@ -28,7 +33,7 @@
 
 /* Zoom and Rotate Effect */
 .event-card:hover .event-bg {
-  transform: scale(1.3) rotate(15deg);
+  transform: scale(1.5) rotate(15deg);
   filter: blur(5px);
 }
 
@@ -127,33 +132,9 @@
 .event-card:hover .event-icon{
   opacity: 0;
 }
-
-/* Layout Fix - Grid System */
-.event-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  justify-content: center;
-}
-
-/* Responsive Design */
-@media (min-width: 992px) {
-  .event-container {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 1023px) and (min-width: 768px) {
-  .event-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 767px) {
-  .event-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
+.event-realname{
+  position: absolute;
+  top: 300px;
 }
 
 

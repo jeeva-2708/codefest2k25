@@ -25,7 +25,7 @@ body {
   margin: 0 auto;
   perspective: 360px;
   perspective-origin: 50% 50%;
-  z-index: 0;
+  z-index: -1;
   background: linear-gradient(#000 25%, #4B0082 50%, #4B0082 50%, #000 100%);
 }
 

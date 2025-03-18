@@ -7,21 +7,28 @@ position: "fixed",
       transition: "max-height 0.5s ease-in-out, opacity 0.5s ease-in-out",
       backdropFilter: "blur(10px)"
 
-      /* Responsive Design */
-@media (min-width: 992px) {
-  .event-container {
-    grid-template-columns: repeat(4, 1fr);
-  }
+
+
+
+.event-container {
+  display: flex; /* Enables Flexbox for centering */
+  justify-content: center; /* Horizontally centers the cards */
+  align-items: center; /* Vertically centers the cards */
+  flex-wrap: wrap; /* Allows wrapping for multiple rows */
+  gap: 20px; /* Adds spacing between cards */
+  padding: 20px; /* Optional: Adds padding around the container */
+  height: 100vh; /* Makes the container fill the viewport height */
+  margin: 0 auto; /* Centers the container if it has a parent */
 }
 
-@media (max-width: 1023px) and (min-width: 768px) {
-  .event-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 767px) {
-  .event-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
+.card {
+  width: 299px; /* Card width */
+  height: 420px; /* Card height */
+  margin: 10px; /* Adds space around each card */
+  background-color: #f4f4f4; /* Optional: Gives the card a background color */
+  border: 1px solid #ccc; /* Optional: Adds a border for styling */
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow for aesthetics */
+  display: flex; /* For any internal content alignment */
+  justify-content: center; /* Centers internal content horizontally */
+  align-items: center; /* Centers internal content vertically */
 }
