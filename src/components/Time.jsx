@@ -1,15 +1,10 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/time.css";
 
 const Time = () => {
-  const [time, setTime] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
+  const [time, setTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
     const targetDate = new Date("2025-03-27T23:59:59");
@@ -18,68 +13,64 @@ const Time = () => {
       const now = new Date();
       const timeDifference = targetDate - now;
 
-      const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      const minutes = Math.floor(
-        (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
-      );
-      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-      setTime({ days, hours, minutes, seconds });
+      setTime({
+        days: Math.floor(timeDifference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((timeDifference % (1000 * 60)) / 1000),
+      });
     };
 
-    // Update the countdown immediately upon component mount
     updateCountdown();
-
-    // Set up the interval to update every second
     const interval = setInterval(updateCountdown, 1000);
-
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const timerSection = document.querySelector(".time");
+      if (timerSection) {
+        const rect = timerSection.getBoundingClientRect();
+        setIsSticky(rect.bottom < 0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div>
-      <section className="time d-flex justify-content-center align-items-center">
-        <div
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          className="container text-center"
-        >
-          <h1>Act fast! Join us now!</h1>
-          <div className="d-flex justify-content-center gap-5">
-            <div>
-              <div>
-                <p>{time.days}</p>
-              </div>
-              <p>Days</p>
+    <>
+      {/* Main Timer */}
+      <div className="time-container">
+        <section className="time d-flex justify-content-center align-items-center">
+          <div data-aos="fade-up" data-aos-duration="1000" className="container text-center">
+            <h1>Act fast! Join us now!</h1>
+            <div className="d-flex justify-content-center gap-5">
+              {["Days", "Hours", "Minutes", "Seconds"].map((unit, index) => (
+                <div key={index}>
+                  <div><p>{time[unit.toLowerCase()]}</p></div>
+                  <p>{unit}</p>
+                </div>
+              ))}
             </div>
-            <div>
-              <div>
-                <p>{time.hours}</p>
-              </div>
-              <p>Hour</p>
-            </div>
-            <div>
-              <div>
-                <p>{time.minutes}</p>
-              </div>
-              <p>Minutes</p>
-            </div>
-            <div>
-              <div>
-                <p>{time.seconds}</p>
-              </div>
-              <p>Seconds</p>
-            </div>
+            <div><a href="#">Register Now</a></div>
           </div>
-          <div>
-            <a href="">Register Now</a>
-          </div>
+        </section>
+      </div>
+
+      {/* Sticky Timer */}
+      <div className={`sticky-timer ${isSticky ? "show" : ""}`}>
+        <div className="d-flex">
+          {["Days", "Hours", "Minutes", "Seconds"].map((unit, index) => (
+            <div key={index}>
+              <div><p>{time[unit.toLowerCase()]}</p></div>
+              <p>{unit}</p>
+            </div>
+          ))}
         </div>
-      </section>
-    </div>
+      </div>
+    </>
   );
 };
 

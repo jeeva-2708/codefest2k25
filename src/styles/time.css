@@ -4,103 +4,118 @@
     box-sizing: border-box;
 }
 
-
-/* time starts */
+/* Main Timer */
 .time {
     height: 80vh;
-
 }
 
-.time>div>h1 {
+.time > div > h1 {
     font-family: 'Impact', Charcoal, sans-serif;
     font-size: 55px;
     margin-bottom: 50px;
     color: #000000;
 }
 
-.time>div {
+.time > div {
     width: 100vw;
     padding: 45px;
-    background: #ff00cc;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #333399, #ff00cc);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #333399, #ff00cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: linear-gradient(to left, #333399, #ff00cc);
     box-shadow: 0px 0px 20px #a493a4;
     border-radius: 20px;
 }
 
-.time>div>div>div>div {
-
+/* Countdown Box */
+.time > div > div > div > div {
     display: inline-block;
-    padding: 13px 25px;
-    background-color: #FFF ;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent */
     border-radius: 16px;
     margin-bottom: 10px;
 }
 
-.time>div>div:nth-child(2) {
-    margin-bottom: 20px;
-}
-
-.time>div>div>div>div>p {
+.time > div > div > div > div > p {
     font-family: "Seven Segment";
     font-weight: 700;
     font-size: 35px;
-    text-shadow: rgba(255, 255, 255, 0.8);
-    margin-bottom: 0 !important;
+    color: white;
 }
 
-.time>div>div>div>p {
+.time > div > div > div > p {
     font-family: "Roboto Condensed", sans-serif;
     font-size: 18px;
-    color: #FFFFFF;
+    color: white;
 }
 
-.time>div>div:nth-child(3)>a {
-    background-image: linear-gradient(to right, #005C97 0%, #363795  51%, #005C97  100%);
+/* Register Button */
+.time > div > div:nth-child(3) > a {
+    background: linear-gradient(to right, #005C97 0%, #363795 51%, #005C97 100%);
     text-decoration: none;
     font-weight: 700;
-    margin: 10px;
-    padding: 15px 45px;
+    padding: 12px 40px;
     text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
     background-size: 200% auto;
-    color: white;            
-    box-shadow: 0 0 20px #2e2929;
+    color: white;
+    box-shadow: 0 0 10px #2e2929;
     border-radius: 10px;
     display: inline-block;
+    font-size: 16px;
 }
 
-.time>div>div:nth-child(3)>a:hover {
+.time > div > div:nth-child(3) > a:hover {
     background-position: right center;
-    /* change the direction of the change here */
     color: #fff;
-
 }
 
-@media screen and (min-width: 998px) {
-    .time>div {
-        width: 100vw;
-    }
+/* Sticky Timer */
+.sticky-timer {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    margin-right: 50px;
+    width: 100px;
+    background: rgba(0, 0, 0, 0.2); /* Transparent */
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.btn-grad {background-image: linear-gradient(to right, #005C97 0%, #363795  51%, #005C97  100%)}
-.btn-grad {
-   margin: 10px;
-   padding: 15px 45px;
-   text-align: center;
-   text-transform: uppercase;
-   transition: 0.5s;
-   background-size: 200% auto;
-   color: white;            
-   box-shadow: 0 0 20px #eee;
-   border-radius: 10px;
-   display: block;
- }
+.sticky-timer.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 
- .btn-grad:hover {
-   background-position: right center; /* change the direction of the change here */
-   color: #fff;
-   text-decoration: none;
- }
+.sticky-timer p {
+    font-size: 10px;
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+.sticky-timer .d-flex {
+    flex-wrap: nowrap;
+    gap: 3px;
+    justify-content: center;
+}
+
+.sticky-timer div > div {
+    padding: 3px 5px;
+    background: rgba(255, 255, 255, 0.1); /* Transparent */
+    border-radius: 5px;
+}
+
+.sticky-timer div > div > p {
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+.sticky-timer div > p {
+    font-size: 9px;
+    color: white;
+}

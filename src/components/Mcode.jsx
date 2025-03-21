@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import Time from "./Time";
 import NonTechnicalEvents from "./NonTechnicalEvents";
 import TechnicalEvents from "./TechnicalEvents";
+import About from "./About";
 
 
 
@@ -59,6 +60,9 @@ const Mcode = () => {
         </h1>
       </section>
           <Time/>
+      <section>
+        <About/>
+      </section>
 
       <section>
         {/* EventCard with EventList */}
