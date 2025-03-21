@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../styles/Header.css"
 
@@ -12,7 +12,6 @@ const Header = () => {
   const reg = () =>{
     setText(text === "Registration Open" ? "Registration Close" : "Registration Open")
   }
-  // hamburger animation
   const [isActive, setIsActive] = useState(false);
   
   const handleClick = () => {
@@ -28,7 +27,7 @@ const Header = () => {
       position: "fixed",
   
       width: "100%",
-      zIndex: "1",
+      zIndex: "999",
       padding: "20px",
       background: "rgba(255 ,244 , 254, 0.08 )",
             backdropFilter: "blur(10px)"

@@ -1,50 +1,226 @@
 .about-section {
-    padding: 50px 10%;
+  padding: 60px 5%;
+  background: transparent;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 30%, rgba(72, 118, 255, 0) 0%, transparent 40%);
+  z-index: 0;
+}
+
+.About-Title {
+  text-align: center;
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 80px;
+  position: relative;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  z-index: 1;
+}
+
+.About-Title::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff5e62, #ff9966);
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 100px;
+  position: relative;
+  z-index: 1;
+}
+
+.about-container::before {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(0, 147, 255, 0.1);
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(40px);
+}
+
+.about-container:nth-child(2)::before {
+  left: -50px;
+  top: -50px;
+}
+
+.about-container:nth-child(3)::before {
+  right: -50px;
+  bottom: -50px;
+}
+
+.about-container.reverse {
+  flex-direction: row-reverse;
+}
+
+.about-image {
+  width: 25%;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: all 0.5s ease;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.about-image:hover {
+  transform: translateY(-10px) rotateY(10deg);
+  box-shadow: 0 15px 35px rgba(0, 64, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.about-text {
+  width: 55%;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #ffffff, #a0cfff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.about-text h1::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #ff5e62, #ff9966);
+  bottom: 0;
+  left: 0;
+  border-radius: 2px;
+}
+
+.about-text p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@keyframes floatingParticle {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+.about-section::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(circle at 20% 35%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 75% 44%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 46% 52%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 100px 100px;
+  z-index: 0;
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 10px rgba(0, 162, 255, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(0, 162, 255, 0.8), 0 0 30px rgba(0, 110, 255, 0.5); }
+  100% { box-shadow: 0 0 10px rgba(0, 162, 255, 0.5); }
+}
+
+[data-aos="custom-fade-right"] {
+  transform: translateX(-50px);
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos="custom-fade-right"].aos-animate {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+[data-aos="custom-fade-left"] {
+  transform: translateX(50px);
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos="custom-fade-left"].aos-animate {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+@media (max-width: 992px) {
+  .about-container, .about-container.reverse {
+    flex-direction: column;
+    gap: 30px;
   }
   
-  .about-container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+  .about-image, .about-text {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .About-Title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .About-Title {
+    font-size: 2.8rem;
     margin-bottom: 50px;
-  }
-  
-  .about-container.reverse {
-    flex-direction: row-reverse;
-  }
-  
-  .about-image {
-    width: 40%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .about-text {
-    width: 50%;
   }
   
   .about-text h1 {
     font-size: 2rem;
-    margin-bottom: 10px;
   }
   
   .about-text p {
-    font-size: 1.2rem;
-    line-height: 1.6;
+    font-size: 1.1rem;
   }
+  
+  .about-container {
+    margin-bottom: 60px;
+  }
+}
 
+@media (max-width: 480px) {
   .About-Title {
-    text-align: center;  /* Centers the text */
-    font-size: 4rem;  /* Adjust size for good visibility */
-    font-weight: bold;  /* Makes it stand out */
-    margin-bottom: 70px; /* Adds gap below */
+    font-size: 2.2rem;
   }
   
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .About-Title {
-      font-size: 2rem; /* Slightly smaller font for mobile */
-      margin-bottom: 30px; /* Adjusts spacing for smaller screens */
-    }
+  .about-section {
+    padding: 40px 4%;
   }
-  
+}

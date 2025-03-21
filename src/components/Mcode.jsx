@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -7,38 +7,40 @@ import NonTechnicalEvents from "./NonTechnicalEvents";
 import TechnicalEvents from "./TechnicalEvents";
 import About from "./About";
 
-
-
-
-
 const Mcode = () => {
   const [text, setText] = useState("Registration Open");
+  const aboutSectionRef = useRef(null); // Ref for the About section
+  const footerRef = useRef(null); // Ref for the Footer section
 
+  // Toggle registration text
   const reg = () => {
     setText(
       text === "Registration Open" ? "Registration Close" : "Registration Open"
     );
   };
 
-  window.addEventListener("scroll", function () {
+  // Handle scroll events
+  useEffect(() => {
     const animatedElement = document.querySelector(".animated-element");
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-    // Pause the animation when scrolling
-    if (scrollTop > 0) {
-      animatedElement.style.animationPlayState = "paused";
-    } else {
-      animatedElement.style.animationPlayState = "running";
-    }
-  });
-  
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
+      // Pause the animation when scrolling
+      if (animatedElement) {
+        animatedElement.style.animationPlayState =
+          scrollTop > 0 ? "paused" : "running";
+      }
+    };
 
- 
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div >
-      <Header/>
-      {/* main sec */}
+    <div>
+      <Header />
+      {/* Main Section */}
       <section
         className="main container"
         style={{
@@ -59,19 +61,25 @@ const Mcode = () => {
           CODEFEST 2K25
         </h1>
       </section>
-          <Time/>
-      <section>
-        <About/>
+
+      {/* Timer Section */}
+      <Time aboutSectionRef={aboutSectionRef} footerRef={footerRef} /> {/* Pass the refs to Time */}
+
+      {/* About Section */}
+      <section ref={aboutSectionRef}> {/* Attach the ref to About */}
+        <About />
       </section>
 
+      {/* Events Section */}
       <section>
-        {/* EventCard with EventList */}
-        <NonTechnicalEvents/>
-        <TechnicalEvents/>
+        <NonTechnicalEvents />
+        <TechnicalEvents />
       </section>
 
-        <Footer/>
-      
+      {/* Footer Section */}
+      <footer ref={footerRef}> {/* Attach the ref to Footer */}
+        <Footer />
+      </footer>
     </div>
   );
 };

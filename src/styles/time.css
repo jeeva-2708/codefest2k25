@@ -119,3 +119,7 @@
     font-size: 9px;
     color: white;
 }
+
+.sticky-timer {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }

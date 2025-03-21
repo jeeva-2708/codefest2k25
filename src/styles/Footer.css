@@ -1,0 +1,50 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Francois One", sans-serif;
+}
+
+.footer-wrapper {
+    
+    backdrop-filter: blur(10px);
+    padding: 50px 0px;
+
+}
+
+.f-name>h3 {
+    font-family: "Cyber Alert", sans-serif;
+    opacity: 1;
+    background: linear-gradient(to right, #4B0082, #FF10F0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    
+}
+.f-name > h3 ,
+.f-sub-name > h3{
+    margin-bottom: 20px;
+}
+
+
+.f-sub-name>p,
+.f-name>p ,
+.f-name > p > span,
+.f-sub-name > p > span{
+    font-family: "Inter", sans-serif;
+    font-weight: 200;
+    font-size: 15px;
+    color: #ffff;
+}
+.f-copy-rights {
+    color: #ffff;
+}
+.f-copy-rights > div:nth-child(2) {
+    font-size: 20px;
+}
+.line{
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    margin: 50px 0;
+}

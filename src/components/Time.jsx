@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/time.css";
 
-const Time = () => {
+const Time = ({ aboutSectionRef, footerRef }) => {
   const [time, setTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [isSticky, setIsSticky] = useState(false);
+  const [isMainTimerVisible, setIsMainTimerVisible] = useState(true); // State to control main timer visibility
+  const mainTimerRef = useRef(null); // Ref for the main timer section
 
+  // Update countdown timer
   useEffect(() => {
     const targetDate = new Date("2025-03-27T23:59:59");
 
@@ -26,12 +29,31 @@ const Time = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Handle scroll events
   useEffect(() => {
     const handleScroll = () => {
-      const timerSection = document.querySelector(".time");
-      if (timerSection) {
-        const rect = timerSection.getBoundingClientRect();
-        setIsSticky(rect.bottom < 0);
+      const mainTimer = mainTimerRef.current;
+      const aboutSection = aboutSectionRef.current;
+      const footer = footerRef.current;
+
+      if (mainTimer && aboutSection && footer) {
+        const mainTimerBottom = mainTimer.getBoundingClientRect().bottom;
+        const aboutSectionTop = aboutSection.getBoundingClientRect().top;
+        const footerTop = footer.getBoundingClientRect().top;
+
+        // Hide main timer when about section comes into view
+        if (aboutSectionTop <= window.innerHeight) {
+          setIsMainTimerVisible(false); // Fade out main timer
+        } else {
+          setIsMainTimerVisible(true); // Fade in main timer
+        }
+
+        // Show sticky timer when main timer is out of view and stop it above the footer
+        if (mainTimerBottom < 0 && footerTop > window.innerHeight) {
+          setIsSticky(true);
+        } else {
+          setIsSticky(false);
+        }
       }
     };
 
@@ -42,7 +64,14 @@ const Time = () => {
   return (
     <>
       {/* Main Timer */}
-      <div className="time-container">
+      <div
+        ref={mainTimerRef}
+        className="time-container"
+        style={{
+          opacity: isMainTimerVisible ? 1 : 0, // Fade in/out
+          transition: "opacity 0.5s ease", // Smooth transition
+        }}
+      >
         <section className="time d-flex justify-content-center align-items-center">
           <div data-aos="fade-up" data-aos-duration="1000" className="container text-center">
             <h1>Act fast! Join us now!</h1>
