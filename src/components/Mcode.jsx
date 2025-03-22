@@ -5,10 +5,7 @@ import Footer from "./Footer";
 import Time from "./Time";
 import NonTechnicalEvents from "./NonTechnicalEvents";
 import TechnicalEvents from "./TechnicalEvents";
-
-
-
-
+import GradientText from "../../Reactbits/GradientText/GradientText";
 
 const Mcode = () => {
   const [text, setText] = useState("Registration Open");
@@ -30,13 +27,10 @@ const Mcode = () => {
       animatedElement.style.animationPlayState = "running";
     }
   });
-  
 
-
- 
   return (
-    <div >
-      <Header/>
+    <div>
+      <Header />
       {/* main sec */}
       <section
         className="main container"
@@ -47,27 +41,35 @@ const Mcode = () => {
           alignItems: "center",
         }}
       >
-        <h1
-          className="animated-element"
-          style={{
-            fontFamily: "Cyber Alert",
-            color: "#fbccfd",
-            fontSize: "45px",
-          }}
-        >
-          CODEFEST 2K25
+        <h1 className="animate-charcter" >
+          <GradientText
+            colors={[
+              "#d4d4d4",
+              "#c0c0c0",
+              "#808080",
+              "#3d3d3d",
+              "#d4d4d4",
+              "#c0c0c0",
+              "#808080",
+              "#3d3d3d",
+            ]}
+            animationSpeed={3}
+            showBorder={false}
+            className="custom-class"
+          >
+            CODEFEST 2K25
+          </GradientText>
         </h1>
       </section>
-          <Time/>
+      <Time />
 
       <section>
         {/* EventCard with EventList */}
-        <NonTechnicalEvents/>
-        <TechnicalEvents/>
+        <NonTechnicalEvents />
+        <TechnicalEvents />
       </section>
 
-        <Footer></Footer>
-      
+      <Footer></Footer>
     </div>
   );
 };
